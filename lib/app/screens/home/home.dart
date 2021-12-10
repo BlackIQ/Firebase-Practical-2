@@ -1,6 +1,7 @@
-import 'package:firebaseauth/app/widgets/buttons/text_button.dart';
-import 'package:firebaseauth/app/widgets/fields/field.dart';
+import 'package:firebaseauth/app/models/user.dart';
+import 'package:firebaseauth/app/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,12 +9,26 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final AuthenticationService _auth = AuthenticationService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
+        actions: [
+          FlatButton(
+            onPressed: () async {
+              await _auth.signOut();
+            },
+            child: Text(
+              'Logout',
+              style: TextStyle(
+                color: Colors.white
+              ),
+            ),
+          ),
+        ],
         title: Text('Firebase Home'),
       ),
       body: _page(),
