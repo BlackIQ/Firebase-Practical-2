@@ -92,8 +92,6 @@ class _AuthenticateState extends State<Authenticate> {
                         );
                       },
                     );
-                  } else {
-                    print('Hi');
                   }
                 },
                 text: 'Login in Anonymous',
