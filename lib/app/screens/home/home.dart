@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
             ),
           ),
         ],
-        title: Text('Firebase Home'),
+        title: Text('Home'),
       ),
       body: PageView(
         controller: pageController,
