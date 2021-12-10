@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       title: 'Firebase Auth',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blueGrey,
       ),
       home: Landing(),
     );
