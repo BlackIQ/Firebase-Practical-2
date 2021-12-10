@@ -10,7 +10,6 @@ class Landing extends StatefulWidget {
 class _LandingState extends State<Landing> {
   @override
   Widget build(BuildContext context) {
-
     dynamic user = null;
 
     if (user == null) {
