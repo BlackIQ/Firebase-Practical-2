@@ -1,15 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebaseauth/app/models/user.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationService {
-  // Instance Firebase
+  // Instance Firebase and Google
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   // Create user object based on FirebaseUser
   User _userFromFirebaseUser(FirebaseUser user) {
     if (user != null) {
-      return User(uid: user.uid);
+      return User(
+        uid: user.uid,
+        profile: user.photoUrl,
+        name: user.displayName,
+      );
     } else {
       return null;
     }
@@ -69,13 +76,13 @@ class AuthenticationService {
     }
   }
 
+  // Login with Gmail
   Future googleLogin() async {
     try {
-      GoogleSignIn googleSignIn = GoogleSignIn();
       GoogleSignInAccount googleAccount = await googleSignIn.signIn();
       if (googleAccount != null) {
         GoogleSignInAuthentication googleAuth =
-        await googleAccount.authentication;
+            await googleAccount.authentication;
 
         if (googleAuth.idToken != null && googleAuth.accessToken != null) {
           AuthResult result = await _auth.signInWithCredential(
@@ -103,6 +110,21 @@ class AuthenticationService {
         null,
         e.toString(),
       ];
+    }
+  }
+
+  getGoogleImage() {
+    if (googleSignIn.currentUser.photoUrl != null) {
+      return Image.network(
+        googleSignIn.currentUser.photoUrl,
+        height: 100,
+        width: 100,
+      );
+    } else {
+      return FaIcon(
+        FontAwesomeIcons.user,
+        size: 100,
+      );
     }
   }
 }
