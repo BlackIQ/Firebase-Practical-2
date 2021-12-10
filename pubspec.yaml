@@ -1,0 +1,24 @@
+name: firebaseauth
+description: Learning firebase auth
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^0.14.0+5
+  cloud_firestore: ^0.12.9+4
+  provider: ^4.3.3
+  flutter_spinkit: ^5.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
