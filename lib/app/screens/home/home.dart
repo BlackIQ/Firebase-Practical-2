@@ -1,6 +1,9 @@
+import 'package:firebaseauth/app/models/user.dart';
 import 'package:firebaseauth/app/services/auth.dart';
+import 'package:firebaseauth/app/widgets/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -24,6 +27,10 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
+    final user = Provider.of<User>(context).uid;
+
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -45,17 +52,17 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     actions: <Widget>[
-                      TextButton(
-                        child: Text('Yes. Logout'),
-                        onPressed: () async {
+                      FormTextButton(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        text: 'Cencel',
+                      ),
+                      FormTextButton(
+                        text: 'Yes. Logout',
+                        onTap: () async {
                           Navigator.of(context).pop();
                           await _auth.signOut();
-                        },
-                      ),
-                      TextButton(
-                        child: Text('Cancel'),
-                        onPressed: () {
-                          Navigator.of(context).pop();
                         },
                       ),
                     ],
@@ -76,13 +83,12 @@ class _HomeState extends State<Home> {
         children: <Widget>[
           _home(),
           _search(),
-          _setings(),
+          _setings(user),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 10,
         onTap: changePage,
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.grey[100],
         currentIndex: _selectedIndex,
         unselectedItemColor: Colors.grey[400],
         items: <BottomNavigationBarItem>[
@@ -125,12 +131,18 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _setings() {
+  Widget _setings(User user) {
+    dynamic x = user;
     return SingleChildScrollView(
       padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
-          Text('Account'),
+          CircleAvatar(
+            radius: 50,
+            backgroundColor: Colors.blueGrey,
+            backgroundImage: x != null ? NetworkImage(x) : null,
+            child: x == null ? FaIcon(FontAwesomeIcons.camera, size: 40) : null,
+          ),
         ],
       ),
     );
