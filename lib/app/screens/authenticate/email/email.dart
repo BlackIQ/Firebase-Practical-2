@@ -15,12 +15,12 @@ class _EmailAuthState extends State<EmailAuth> {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _register_name = TextEditingController();
-    TextEditingController _register_email = TextEditingController();
-    TextEditingController _register_password = TextEditingController();
+    TextEditingController _registerName = TextEditingController();
+    TextEditingController _registerEmail = TextEditingController();
+    TextEditingController _egisterPassword = TextEditingController();
 
-    TextEditingController _login_email = TextEditingController();
-    TextEditingController _login_password = TextEditingController();
+    TextEditingController _loginEmail = TextEditingController();
+    TextEditingController _loginPassword = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -43,14 +43,14 @@ class _EmailAuthState extends State<EmailAuth> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       TextFormFields(
-                        controller: _login_email,
+                        controller: _loginEmail,
                         label: 'Email',
                         hint: 'jon@due.com',
                         password: false,
                       ),
                       SizedBox(height: 10),
                       TextFormFields(
-                        controller: _login_password,
+                        controller: _loginPassword,
                         label: 'Password',
                         hint: '********',
                         password: true,
@@ -62,8 +62,8 @@ class _EmailAuthState extends State<EmailAuth> {
                           FormNormalButton(
                             onTap: () async {
                               dynamic result = await _auth.loginEmail(
-                                _login_email.text,
-                                _login_password.text,
+                                _loginEmail.text,
+                                _loginPassword.text,
                               );
                               if (result.runtimeType == List) {
                                 showDialog(
@@ -117,21 +117,21 @@ class _EmailAuthState extends State<EmailAuth> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       TextFormFields(
-                        controller: _register_name,
+                        controller: _registerName,
                         label: 'Name',
                         hint: 'Jon Due',
                         password: false,
                       ),
                       SizedBox(height: 10),
                       TextFormFields(
-                        controller: _register_email,
+                        controller: _registerEmail,
                         label: 'Email',
                         hint: 'jon@due.com',
                         password: false,
                       ),
                       SizedBox(height: 10),
                       TextFormFields(
-                        controller: _register_password,
+                        controller: _egisterPassword,
                         label: 'Password',
                         hint: '********',
                         password: true,
@@ -143,8 +143,8 @@ class _EmailAuthState extends State<EmailAuth> {
                           FormNormalButton(
                             onTap: () async {
                               dynamic result = await _auth.registerEmail(
-                                _register_email.text,
-                                _register_password.text,
+                                _registerEmail.text,
+                                _egisterPassword.text,
                               );
                               if (result.runtimeType == List) {
                                 showDialog(
