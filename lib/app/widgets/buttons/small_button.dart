@@ -15,9 +15,6 @@ class FormNormalButton extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         text,
-        style: TextStyle(
-          color: Colors.white,
-        ),
       ),
     );
   }

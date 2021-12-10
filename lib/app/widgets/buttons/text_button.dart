@@ -16,7 +16,7 @@ class FormTextButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: Colors.orange[600],
+          color: Colors.blueGrey,
         ),
       ),
     );

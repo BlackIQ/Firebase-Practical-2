@@ -27,9 +27,6 @@ class WideButton extends StatelessWidget {
             ),
             Text(
               text,
-              style: TextStyle(
-                color: Colors.white,
-              ),
             ),
           ],
         ),
