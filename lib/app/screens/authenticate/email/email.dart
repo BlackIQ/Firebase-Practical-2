@@ -61,9 +61,10 @@ class _EmailAuthState extends State<EmailAuth> {
                         children: <Widget>[
                           FormNormalButton(
                             onTap: () async {
-                              dynamic result = await _auth.registerEmail(
-                                  _register_email.text,
-                                  _register_password.text);
+                              dynamic result = await _auth.loginEmail(
+                                _login_email.text,
+                                _login_password.text,
+                              );
                               if (result.runtimeType == List) {
                                 showDialog(
                                   context: context,
@@ -142,8 +143,9 @@ class _EmailAuthState extends State<EmailAuth> {
                           FormNormalButton(
                             onTap: () async {
                               dynamic result = await _auth.registerEmail(
-                                  _register_email.text,
-                                  _register_password.text);
+                                _register_email.text,
+                                _register_password.text,
+                              );
                               if (result.runtimeType == List) {
                                 showDialog(
                                   context: context,
