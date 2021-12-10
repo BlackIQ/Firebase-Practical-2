@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<User>(context).uid;
+    final user = Provider.of<User>(context);
 
 
     return Scaffold(
@@ -132,7 +132,6 @@ class _HomeState extends State<Home> {
   }
 
   Widget _setings(User user) {
-    dynamic x = user;
     return SingleChildScrollView(
       padding: EdgeInsets.all(20),
       child: Column(
@@ -140,8 +139,15 @@ class _HomeState extends State<Home> {
           CircleAvatar(
             radius: 50,
             backgroundColor: Colors.blueGrey,
-            backgroundImage: x != null ? NetworkImage(x) : null,
-            child: x == null ? FaIcon(FontAwesomeIcons.camera, size: 40) : null,
+            backgroundImage: user.profile != null ? NetworkImage(user.profile) : null,
+            child: user.profile == null ? FaIcon(FontAwesomeIcons.camera, size: 40) : null,
+          ),
+          SizedBox(height: 20),
+          Text(
+            user.name,
+            style: TextStyle(
+              fontSize: 20,
+            ),
           ),
         ],
       ),
