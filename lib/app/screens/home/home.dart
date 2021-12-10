@@ -1,7 +1,6 @@
-import 'package:firebaseauth/app/models/user.dart';
 import 'package:firebaseauth/app/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,6 +9,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final AuthenticationService _auth = AuthenticationService();
+
+  int _selectedIndex = 0;
+  PageController pageController = PageController();
+
+  void changePage(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    // pageController.jumpToPage(index);
+    pageController.animateToPage(index, duration: Duration(milliseconds: 1000), curve: Curves.ease);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,16 +43,57 @@ class _HomeState extends State<Home> {
         ],
         title: Text('Firebase Home'),
       ),
-      body: _page(),
+      body: PageView(
+        controller: pageController,
+        children: <Widget>[
+          _home(),
+          _search(),
+          _setings(),
+        ],
+      ),
+        bottomNavigationBar: BottomNavigationBar(
+          elevation: 10,
+          onTap: changePage,
+          backgroundColor: Colors.grey[200],
+          currentIndex: _selectedIndex,
+          unselectedItemColor: Colors.grey[400],
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.home), label: 'Home',),
+            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.search), label: 'Search',),
+            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.cogs), label: 'Settings',),
+          ],
+        ),
     );
   }
 
-  Widget _page() {
+  Widget _home() {
     return SingleChildScrollView(
       padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
-          Text('You are logged in now.'),
+          Text('Home'),
+        ],
+      ),
+    );
+  }
+
+  Widget _search() {
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(20),
+      child: Column(
+        children: <Widget>[
+          Text('Search'),
+        ],
+      ),
+    );
+  }
+
+  Widget _setings() {
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(20),
+      child: Column(
+        children: <Widget>[
+          Text('Account'),
         ],
       ),
     );
