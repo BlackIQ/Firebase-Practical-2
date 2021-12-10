@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FormNormalButton extends StatelessWidget {
-  FormNormalButton({
+class FormTextButton extends StatelessWidget {
+  FormTextButton({
     this.text,
     this.onTap,
   });
@@ -11,12 +11,12 @@ class FormNormalButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return TextButton(
       onPressed: onTap,
       child: Text(
         text,
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.orange[600],
         ),
       ),
     );
