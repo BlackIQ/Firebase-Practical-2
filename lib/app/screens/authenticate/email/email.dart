@@ -5,16 +5,13 @@ import 'package:firebaseauth/app/widgets/fields/field.dart';
 import 'package:flutter/material.dart';
 
 class EmailAuth extends StatefulWidget {
-  EmailAuth({this.status});
-
-  final status;
-
   @override
   _EmailAuthState createState() => _EmailAuthState();
 }
 
 class _EmailAuthState extends State<EmailAuth> {
   final AuthenticationService _auth = AuthenticationService();
+  bool login = true;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +21,6 @@ class _EmailAuthState extends State<EmailAuth> {
 
     TextEditingController _login_email = TextEditingController();
     TextEditingController _login_password = TextEditingController();
-
-    bool login;
-
-    setState(() {
-      login = widget.status;
-    });
 
     return Scaffold(
       appBar: AppBar(
@@ -103,13 +94,9 @@ class _EmailAuthState extends State<EmailAuth> {
                           ),
                           FormTextButton(
                             onTap: () {
-                              Navigator.of(context).pop();
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      EmailAuth(status: false),
-                                ),
-                              );
+                              setState(() {
+                                login = false;
+                              });
                             },
                             text: 'Register',
                           ),
@@ -187,12 +174,9 @@ class _EmailAuthState extends State<EmailAuth> {
                           ),
                           FormTextButton(
                             onTap: () {
-                              Navigator.of(context).pop();
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => EmailAuth(status: true),
-                                ),
-                              );
+                              setState(() {
+                                login = true;
+                              });
                             },
                             text: 'Login',
                           ),

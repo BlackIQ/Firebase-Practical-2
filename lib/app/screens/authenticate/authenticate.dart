@@ -59,7 +59,7 @@ class _AuthenticateState extends State<Authenticate> {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => EmailAuth(status: true),
+                      builder: (context) => EmailAuth(),
                     ),
                   );
                 },
