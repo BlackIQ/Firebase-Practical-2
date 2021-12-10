@@ -15,6 +15,7 @@ dependencies:
   cloud_firestore: ^0.12.9+4
   provider: ^4.3.3
   flutter_spinkit: ^5.1.0
+  font_awesome_flutter: ^9.2.0
 
 dev_dependencies:
   flutter_test:
