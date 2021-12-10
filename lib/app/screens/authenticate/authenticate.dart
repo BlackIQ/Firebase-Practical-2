@@ -50,18 +50,9 @@ class _AuthenticateState extends State<Authenticate> {
             ),
             SizedBox(height: 50),
             WideButton(
+              onTap: () {},
               text: 'Login in with Google',
               icon: FontAwesomeIcons.google,
-            ),
-            SizedBox(height: 10),
-            WideButton(
-              text: 'Login in with Facebook',
-              icon: FontAwesomeIcons.facebook,
-            ),
-            SizedBox(height: 10),
-            WideButton(
-              text: 'Login in with Apple',
-              icon: FontAwesomeIcons.apple,
             ),
             SizedBox(height: 10),
             Text(
@@ -84,6 +75,7 @@ class _AuthenticateState extends State<Authenticate> {
             ),
             SizedBox(height: 5),
             WideButton(
+              onTap: () {},
               text: 'Login in Anonymous',
               icon: FontAwesomeIcons.userSecret,
             ),
