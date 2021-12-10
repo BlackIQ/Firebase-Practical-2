@@ -1,7 +1,11 @@
 class User {
   User({
     this.uid,
+    this.profile,
+    this.name,
   });
 
-  final String uid;
+  final uid;
+  final profile;
+  final name;
 }
