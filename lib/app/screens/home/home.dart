@@ -1,3 +1,5 @@
+import 'package:firebaseauth/app/widgets/buttons/text_button.dart';
+import 'package:firebaseauth/app/widgets/fields/field.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -8,7 +10,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        title: Text('Firebase Home'),
+      ),
+      body: _page(),
+    );
   }
 
   Widget _page() {
@@ -16,7 +25,7 @@ class _HomeState extends State<Home> {
       padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
-          Text('Holla'),
+          Text('You are logged in now.'),
         ],
       ),
     );

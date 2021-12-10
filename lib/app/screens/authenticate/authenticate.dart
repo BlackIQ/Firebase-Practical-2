@@ -15,12 +15,7 @@ class _AuthenticateState extends State<Authenticate> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: Text(
-          'Login to an account',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+        title: Text('Login to an account'),
       ),
       body: _page(),
     );
