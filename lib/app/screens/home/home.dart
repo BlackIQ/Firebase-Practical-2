@@ -18,9 +18,9 @@ class _HomeState extends State<Home> {
       _selectedIndex = index;
     });
     // pageController.jumpToPage(index);
-    pageController.animateToPage(index, duration: Duration(milliseconds: 1000), curve: Curves.ease);
+    pageController.animateToPage(index,
+        duration: Duration(milliseconds: 1000), curve: Curves.ease);
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +30,42 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         actions: [
           FlatButton(
-            onPressed: () async {
-              await _auth.signOut();
+            onPressed: () {
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Logout?'),
+                    content: SingleChildScrollView(
+                      child: ListBody(
+                        children: <Widget>[
+                          Text('Are you sure to logout?'),
+                        ],
+                      ),
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        child: Text('Yes. Logout'),
+                        onPressed: () async {
+                          Navigator.of(context).pop();
+                          await _auth.signOut();
+                        },
+                      ),
+                      TextButton(
+                        child: Text('Cancel'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
             },
             child: Text(
               'Logout',
-              style: TextStyle(
-                color: Colors.white
-              ),
+              style: TextStyle(color: Colors.white),
             ),
           ),
         ],
@@ -51,18 +79,27 @@ class _HomeState extends State<Home> {
           _setings(),
         ],
       ),
-        bottomNavigationBar: BottomNavigationBar(
-          elevation: 10,
-          onTap: changePage,
-          backgroundColor: Colors.grey[200],
-          currentIndex: _selectedIndex,
-          unselectedItemColor: Colors.grey[400],
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.home), label: 'Home',),
-            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.search), label: 'Search',),
-            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.cogs), label: 'Settings',),
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
+        onTap: changePage,
+        backgroundColor: Colors.grey[200],
+        currentIndex: _selectedIndex,
+        unselectedItemColor: Colors.grey[400],
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.cogs),
+            label: 'Settings',
+          ),
+        ],
+      ),
     );
   }
 
