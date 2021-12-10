@@ -43,7 +43,32 @@ class _AuthenticateState extends State<Authenticate> {
               ),
               SizedBox(height: 50),
               WideButton(
-                onTap: () {},
+                onTap: () async {
+                  dynamic result = await _auth.googleLogin();
+                  if (result.runtimeType == List) {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('Something went wrong'),
+                          content: SingleChildScrollView(
+                            child: Text(
+                              result[1],
+                            ),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              child: Text('Ok'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                },
                 text: 'Login in with Google',
                 icon: FontAwesomeIcons.google,
               ),
