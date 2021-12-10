@@ -16,6 +16,8 @@ dependencies:
   provider: ^4.3.3
   flutter_spinkit: ^5.1.0
   font_awesome_flutter: ^9.2.0
+  url_launcher: ^6.0.5
+  google_sign_in: ^4.5.9
 
 dev_dependencies:
   flutter_test:
