@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebaseauth/app/models/user.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationService {
   // Instance Firebase
@@ -60,6 +61,32 @@ class AuthenticationService {
       );
       FirebaseUser user = result.user;
       return _userFromFirebaseUser(user);
+    } catch (e) {
+      return [
+        null,
+        e.toString(),
+      ];
+    }
+  }
+
+  Future googleLogin() async {
+    try {
+      GoogleSignIn googleSignIn = GoogleSignIn();
+      GoogleSignInAccount googleAccount = await googleSignIn.signIn();
+      if (googleAccount != null) {
+        GoogleSignInAuthentication googleAuth =
+        await googleAccount.authentication;
+
+        if (googleAuth.idToken != null && googleAuth.accessToken != null) {
+          AuthResult result = await _auth.signInWithCredential(
+            GoogleAuthProvider.getCredential(
+              idToken: googleAuth.idToken,
+              accessToken: googleAuth.accessToken,
+            ),
+          );
+          return _userFromFirebaseUser(result.user);
+        }
+      }
     } catch (e) {
       return [
         null,
