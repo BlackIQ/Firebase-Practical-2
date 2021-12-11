@@ -16,6 +16,8 @@ class AuthenticationService {
         uid: user.uid,
         profile: user.photoUrl,
         name: user.displayName,
+        email: user.email,
+        phone: user.phoneNumber,
       );
     } else {
       return null;
@@ -110,21 +112,6 @@ class AuthenticationService {
         null,
         e.toString(),
       ];
-    }
-  }
-
-  getGoogleImage() {
-    if (googleSignIn.currentUser.photoUrl != null) {
-      return Image.network(
-        googleSignIn.currentUser.photoUrl,
-        height: 100,
-        width: 100,
-      );
-    } else {
-      return FaIcon(
-        FontAwesomeIcons.user,
-        size: 100,
-      );
     }
   }
 }
