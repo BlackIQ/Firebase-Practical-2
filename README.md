@@ -62,3 +62,26 @@ Here are some images that you can see.
 
 - *Voting page*
 ![Firebase Firestore](assets/vote_page.png)
+  
+### TODOs
+
+- [ ] Insert a new user by user
+- [ ] Setup specific page for Github users that can review people also from app
+- [ ] Add more screenshots of application
+
+### Next practical project?
+
+Next practical project for **Firebase** and **Flutter** will be focus on **Firestore** more. In summary, things will be cover are listed below:
+
+- Flutter
+  - Theme and settings for theme
+  - Dark and light mode
+  - Using GoogleFonts
+- Firebase Authentication
+  - Apple Authentication
+  - Github Authentication
+  - Twitter Authentication
+- Firebase Firestore
+  - Deep dive in Firestore and lots of new stuff for it
+- Firebase Real-Time
+  - Take a short look of what is **Firebase real-time database**
