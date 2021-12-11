@@ -44,3 +44,21 @@ But in this project we cover more lessons. Like:
 ### Images
 
 Here are some images that you can see.
+
+- *Firebase Firestore*
+![Firebase Firestore](assets/browser-firestore.png)
+
+- *Firebase Authentication*
+![Firebase Firestore](assets/browser-authentication.png)
+
+- *Landing page*
+![Firebase Firestore](assets/landing.png)
+
+- *Logout*
+![Firebase Firestore](assets/logout.png)
+
+- *Settings page (profile)*
+![Firebase Firestore](assets/settings.png)
+
+- *Voting page*
+![Firebase Firestore](assets/vote_page.png)
