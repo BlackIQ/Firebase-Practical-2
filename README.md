@@ -1,16 +1,46 @@
-# firebaseauth
+# Google Firebase Services
 
-Learning firebase auth
+**Note: Some parts are not committed and they are on working.**
 
-## Getting Started
+It this practical project we learned **Firebase Authentication** and **Firebase Firestore** in a higher level.
 
-This project is a starting point for a Flutter application.
+### Lessons and what we covered
 
-A few resources to get you started if this is your first Flutter project:
+In previous practical projects ([CafeBase](https://github.com/BlackIQ/cafebase)) we just learned about these things:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Flutter
+  - Bottom modal for settings
+- Firebase setup
+  - Setup for Android
+- Firebase Authentications
+  - Anonymous Authentication
+  - Email Authentication
+      - Email login
+      - Email registration
+  - Logout
+- Firebase Firestore
+  - Read date without specific query
+  - Insert data *Create one new document*
+    
+But in this project we cover more lessons. Like:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter
+  - Alert dialog for logout
+  - Bottom navigation bar
+  - Settings to show user image and other stuff
+- Firebase setup
+  - Setup for iOS
+- Firebase Authentications
+  - Google Authentication
+  - Access to user objects
+    - Name
+    - Photo
+    - Email
+    - Phone
+- Firebase Firestore
+  - Read date with specific query
+  - Update a document
+  
+### Images
+
+Here are some images that you can see.
