@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebaseauth/app/models/user.dart';
 import 'package:firebaseauth/app/services/auth.dart';
+import 'package:firebaseauth/app/services/database.dart';
 import 'package:firebaseauth/app/widgets/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,9 +22,13 @@ class _HomeState extends State<Home> {
     setState(() {
       _selectedIndex = index;
     });
+
     // pageController.jumpToPage(index);
-    pageController.animateToPage(index,
-        duration: Duration(milliseconds: 1000), curve: Curves.ease);
+    pageController.animateToPage(
+      index,
+      duration: Duration(milliseconds: 1000),
+      curve: Curves.ease,
+    );
   }
 
   @override
@@ -127,37 +131,41 @@ class _HomeState extends State<Home> {
       children: <Widget>[
         Expanded(
           child: StreamBuilder(
-            stream: Firestore.instance.collection('developers').snapshots(),
+            stream: developers,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return ListView.separated(
-                  itemCount: snapshot.data.documents.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      onTap: () {
-                        snapshot.data.documents[index].reference.updateData({
-                          'votes': snapshot.data.documents[index]['votes'] + 1,
-                        });
-                      },
-                      onLongPress: () {
-                        launch(snapshot.data.documents[index]['github']);
-                      },
-                      trailing: Text(
-                        snapshot.data.documents[index]['votes'].toString(),
-                      ),
-                      leading: snapshot.data.documents[index]['gender'] ? FaIcon(FontAwesomeIcons.male) : FaIcon(FontAwesomeIcons.female),
-                      title: Text(
-                        snapshot.data.documents[index]['name'],
-                      ),
-                      subtitle: Text(
-                        snapshot.data.documents[index]['age'].toString(),
-                      ),
-                    );
-                  },
-                  separatorBuilder: (context, index) => Divider(
-                    color: Colors.blueGrey,
-                  ),
-                );
+                    itemCount: snapshot.data.documents.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        onTap: () {
+                          snapshot.data.documents[index].reference.updateData({
+                            'votes':
+                                snapshot.data.documents[index]['votes'] + 1,
+                          });
+                        },
+                        onLongPress: () {
+                          launch(snapshot.data.documents[index]['github']);
+                        },
+                        trailing: Text(
+                          snapshot.data.documents[index]['votes'].toString(),
+                        ),
+                        leading: snapshot.data.documents[index]['gender']
+                            ? FaIcon(FontAwesomeIcons.male)
+                            : FaIcon(FontAwesomeIcons.female),
+                        title: Text(
+                          snapshot.data.documents[index]['name'],
+                        ),
+                        subtitle: Text(
+                          snapshot.data.documents[index]['age'].toString(),
+                        ),
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return Divider(
+                        color: Colors.blueGrey,
+                      );
+                    });
               }
               return Center(
                 child: CircularProgressIndicator(),
