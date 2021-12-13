@@ -4,6 +4,7 @@ import 'package:firebaseauth/app/services/database.dart';
 import 'package:firebaseauth/app/widgets/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -80,7 +81,10 @@ class _HomeState extends State<Home> {
             ),
           ),
         ],
-        title: Text('Home'),
+        title: Text(
+          'Home',
+          style: GoogleFonts.playfairDisplay(),
+        ),
       ),
       body: PageView(
         controller: pageController,
@@ -181,7 +185,8 @@ class _HomeState extends State<Home> {
     return SingleChildScrollView(
       padding: EdgeInsets.all(20),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
             child: Center(
@@ -207,7 +212,7 @@ class _HomeState extends State<Home> {
           Text(
             user.email != null ? '${user.email}' : 'Email is empty',
             style: TextStyle(
-              fontSize: 17,
+              fontSize: 15,
             ),
           ),
         ],
