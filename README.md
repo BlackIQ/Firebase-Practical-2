@@ -62,7 +62,7 @@ Here are some images that you can see.
   ![Firebase Firestore](assets/settings.png)
 
 - _Voting page_
-  ![Firebase Firestore](assets/vote_page.png)
+  ![Firebase Firestore](assets/vote.png)
 
 ### TODOs
 
