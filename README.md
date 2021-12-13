@@ -10,7 +10,6 @@ In previous practical projects ([CafeBase](https://github.com/BlackIQ/cafebase))
 
 - Flutter
   - Bottom modal for settings
-  - Using GoogleFonts
 - Firebase setup
   - Setup for Android
 - Firebase Authentications
@@ -28,6 +27,7 @@ But in this project we cover more lessons. Like:
 - Flutter
   - Alert dialog for logout
   - Bottom navigation bar
+  - Using GoogleFonts
   - Settings to show user image and other stuff
 - Firebase setup
   - Setup for iOS
