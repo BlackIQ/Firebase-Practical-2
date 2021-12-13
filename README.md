@@ -15,13 +15,13 @@ In previous practical projects ([CafeBase](https://github.com/BlackIQ/cafebase))
 - Firebase Authentications
   - Anonymous Authentication
   - Email Authentication
-      - Email login
-      - Email registration
+    - Email login
+    - Email registration
   - Logout
 - Firebase Firestore
   - Read date without specific query
-  - Insert data *Create one new document*
-    
+  - Insert data _Create one new document_
+
 But in this project we cover more lessons. Like:
 
 - Flutter
@@ -41,32 +41,32 @@ But in this project we cover more lessons. Like:
 - Firebase Firestore
   - Read date with specific query
   - Update a document
-  
+
 ### Images
 
 Here are some images that you can see.
 
-- *Firebase Firestore*
-![Firebase Firestore](assets/browser-firestore.png)
+- _Firebase Firestore_
+  ![Firebase Firestore](assets/browser-firestore.png)
 
-- *Firebase Authentication*
-![Firebase Firestore](assets/browser-authentication.png)
+- _Firebase Authentication_
+  ![Firebase Firestore](assets/browser-authentication.png)
 
-- *Landing page*
-![Firebase Firestore](assets/landing.png)
+- _Landing page_
+  ![Firebase Firestore](assets/landing.png)
 
-- *Logout*
-![Firebase Firestore](assets/logout.png)
+- _Logout_
+  ![Firebase Firestore](assets/logout.png)
 
-- *Settings page (profile)*
-![Firebase Firestore](assets/settings.png)
+- _Settings page (profile)_
+  ![Firebase Firestore](assets/settings.png)
 
-- *Voting page*
-![Firebase Firestore](assets/vote_page.png)
-  
+- _Voting page_
+  ![Firebase Firestore](assets/vote_page.png)
+
 ### TODOs
 
-- [ ] Insert a new user by user
+- [x] Insert a new user by user
 - [x] Add more screenshots of application
 
 ### Next practical project?
