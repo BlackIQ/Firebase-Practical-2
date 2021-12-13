@@ -198,7 +198,15 @@ class _HomeState extends State<Home> {
           ),
           SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () async {
+              return developers.document(_github.text).setData({
+                'age': int.parse(_age.text),
+                'gender': _gender.text,
+                'github': _github.text,
+                'name': _name.text,
+                'votes': 0,
+              });
+            },
             child: Container(
               child: Center(
                 child: Text(
@@ -220,7 +228,7 @@ class _HomeState extends State<Home> {
       children: <Widget>[
         Expanded(
           child: StreamBuilder(
-            stream: developers,
+            stream: developers.snapshots(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return ListView.separated(
