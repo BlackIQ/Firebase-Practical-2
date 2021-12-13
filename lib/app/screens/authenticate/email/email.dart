@@ -27,8 +27,13 @@ class _EmailAuthState extends State<EmailAuth> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        leading: Icon(
-          Icons.arrow_back_ios,
+        leading: GestureDetector(
+          child: Icon(
+            Icons.arrow_back_ios,
+          ),
+          onTap: () {
+            Navigator.of(context).pop();
+          },
         ),
         title: Text(
           'Authentication with Email',
