@@ -101,8 +101,8 @@ class _HomeState extends State<Home> {
         unselectedItemColor: Colors.grey[400],
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.home),
-            label: 'Home',
+            icon: FaIcon(FontAwesomeIcons.plus),
+            label: 'Add',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(FontAwesomeIcons.solidHeart),
@@ -117,12 +117,85 @@ class _HomeState extends State<Home> {
     );
   }
 
+  TextEditingController _name = TextEditingController();
+  TextEditingController _age = TextEditingController();
+  TextEditingController _gender = TextEditingController();
+  TextEditingController _github = TextEditingController();
+
   Widget _home() {
     return SingleChildScrollView(
       padding: EdgeInsets.all(20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Text('Home'),
+          Text(
+            'Name',
+            style: TextStyle(
+              fontSize: 15,
+            ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Amirhossein',
+              labelText: 'Name',
+              icon: FaIcon(
+                FontAwesomeIcons.solidIdBadge,
+              ),
+            ),
+            controller: _name,
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Username',
+            style: TextStyle(
+              fontSize: 15,
+            ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'BlackIW',
+              labelText: 'Username',
+              icon: FaIcon(
+                FontAwesomeIcons.github,
+              ),
+            ),
+            controller: _github,
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Age',
+            style: TextStyle(
+              fontSize: 15,
+            ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              hintText: '18',
+              labelText: 'Age',
+              icon: FaIcon(
+                FontAwesomeIcons.candyCane,
+              ),
+            ),
+            controller: _age,
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Gender',
+            style: TextStyle(
+              fontSize: 15,
+            ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'True or False | True : Male',
+              labelText: 'Gender',
+              icon: FaIcon(
+                FontAwesomeIcons.male,
+              ),
+            ),
+            controller: _gender,
+          ),
         ],
       ),
     );
