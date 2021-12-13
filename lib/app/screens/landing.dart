@@ -9,10 +9,6 @@ class Landing extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
 
-    if (user == null) {
-      return Authenticate();
-    } else {
-      return Home();
-    }
+    return user == null ? Authenticate() : Home();
   }
 }
