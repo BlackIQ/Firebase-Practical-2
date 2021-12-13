@@ -55,6 +55,9 @@ Here are some images that you can see.
 - _Landing page_
   ![Firebase Firestore](assets/landing.png)
 
+- _Adding page_
+  ![Firebase Firestore](assets/add.png)
+
 - _Logout_
   ![Firebase Firestore](assets/logout.png)
 
