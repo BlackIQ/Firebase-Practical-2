@@ -50,22 +50,22 @@ Here are some images that you can see.
   ![Firebase Firestore](assets/browser-firestore.png)
 
 - _Firebase Authentication_
-  ![Firebase Firestore](assets/browser-authentication.png)
+  ![Firebase Authentication](assets/browser-authentication.png)
 
 - _Landing page_
-  ![Firebase Firestore](assets/landing.png)
+  ![Firebase Firestore](assets/home.png)
 
 - _Adding page_
   ![Firebase Firestore](assets/add.png)
 
 - _Logout_
-  ![Firebase Firestore](assets/logout.png)
+  ![Logout](assets/logout.png)
 
 - _Settings page (profile)_
-  ![Firebase Firestore](assets/settings.png)
+  ![Settings](assets/settings.png)
 
 - _Voting page_
-  ![Firebase Firestore](assets/vote.png)
+  ![Voting](assets/vote.png)
 
 ### TODOs
 
