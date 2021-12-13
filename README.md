@@ -10,6 +10,7 @@ In previous practical projects ([CafeBase](https://github.com/BlackIQ/cafebase))
 
 - Flutter
   - Bottom modal for settings
+  - Using GoogleFonts
 - Firebase setup
   - Setup for Android
 - Firebase Authentications
@@ -66,8 +67,7 @@ Here are some images that you can see.
 ### TODOs
 
 - [ ] Insert a new user by user
-- [ ] Setup specific page for Github users that can review people also from app
-- [ ] Add more screenshots of application
+- [x] Add more screenshots of application
 
 ### Next practical project?
 
@@ -76,7 +76,6 @@ Next practical project for **Firebase** and **Flutter** will be focus on **Fires
 - Flutter
   - Theme and settings for theme
   - Dark and light mode
-  - Using GoogleFonts
 - Firebase Authentication
   - Apple Authentication
   - Github Authentication
