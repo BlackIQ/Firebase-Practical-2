@@ -3,6 +3,7 @@ import 'package:firebaseauth/app/services/auth.dart';
 import 'package:firebaseauth/app/widgets/buttons/wide_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Authenticate extends StatefulWidget {
   @override
@@ -18,7 +19,10 @@ class _AuthenticateState extends State<Authenticate> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: Text('Login to an account'),
+        title: Text(
+          'Login to an account',
+          style: GoogleFonts.playfairDisplay(),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(20),
