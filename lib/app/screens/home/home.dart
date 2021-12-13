@@ -196,6 +196,18 @@ class _HomeState extends State<Home> {
             ),
             controller: _gender,
           ),
+          SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {},
+            child: Container(
+              child: Center(
+                child: Text(
+                  'Add this user'
+                ),
+              ),
+              height: 50,
+            ),
+          ),
         ],
       ),
     );
