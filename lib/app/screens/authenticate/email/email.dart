@@ -27,6 +27,9 @@ class _EmailAuthState extends State<EmailAuth> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
+        leading: Icon(
+          Icons.arrow_back_ios,
+        ),
         title: Text(
           'Authentication with Email',
           style: GoogleFonts.playfairDisplay(),
