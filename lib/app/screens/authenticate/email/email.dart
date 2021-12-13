@@ -3,6 +3,7 @@ import 'package:firebaseauth/app/widgets/buttons/small_button.dart';
 import 'package:firebaseauth/app/widgets/buttons/text_button.dart';
 import 'package:firebaseauth/app/widgets/fields/field.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EmailAuth extends StatefulWidget {
   @override
@@ -28,9 +29,7 @@ class _EmailAuthState extends State<EmailAuth> {
         centerTitle: true,
         title: Text(
           'Authentication with Email',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          style: GoogleFonts.playfairDisplay(),
         ),
       ),
       body: login
