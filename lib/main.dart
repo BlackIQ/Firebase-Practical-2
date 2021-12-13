@@ -2,6 +2,7 @@ import 'package:firebaseauth/app/models/user.dart';
 import 'package:firebaseauth/app/screens/landing.dart';
 import 'package:firebaseauth/app/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         title: 'Firebase Auth',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          textTheme: GoogleFonts.playfairDisplayTextTheme(),
           primarySwatch: Colors.blueGrey,
         ),
         home: Landing(),
