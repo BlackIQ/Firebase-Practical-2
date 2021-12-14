@@ -206,6 +206,10 @@ class _HomeState extends State<Home> {
                 'name': _name.text,
                 'votes': 0,
               });
+              _age.clear();
+              _name.clear();
+              _github.clear();
+              _gender.clear();
             },
             child: Container(
               child: Center(
