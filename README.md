@@ -71,7 +71,7 @@ Here are some images that you can see.
 
 - [x] Insert a new user by user
 - [x] Add more screenshots of application
-- [ ] Fix boolean in adding user
+- [x] Fix boolean in adding user
 
 ### Next practical project?
 
