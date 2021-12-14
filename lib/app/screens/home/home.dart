@@ -201,7 +201,7 @@ class _HomeState extends State<Home> {
             onPressed: () async {
               return developers.document(_github.text).setData({
                 'age': int.parse(_age.text),
-                'gender': _gender.text,
+                'gender': _gender.text.toLowerCase() =='true' ? true : false,
                 'github': _github.text,
                 'name': _name.text,
                 'votes': 0,
